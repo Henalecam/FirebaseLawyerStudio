@@ -11,7 +11,7 @@ export const ContactSection = () => {
         <h2 className="text-3xl font-semibold mb-8 text-primary">
           Get in Touch
         </h2>
-        <p className=" text-muted-foreground mb-8">
+        <p className="text-muted-foreground mb-8">
           Ready to discuss your labor law concerns? Contact us today to schedule
           a consultation and learn how Henrique Camargo can help you protect
           your rights.

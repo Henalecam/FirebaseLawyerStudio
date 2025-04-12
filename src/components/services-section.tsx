@@ -44,7 +44,7 @@ export const ServicesSection = () => {
               <h3 className="text-xl font-semibold mb-2 text-primary">
                 {service.title}
               </h3>
-              <p className=" text-muted-foreground">{service.description}</p>
+              <p className="text-muted-foreground">{service.description}</p>
             </div>
           ))}
         </div>

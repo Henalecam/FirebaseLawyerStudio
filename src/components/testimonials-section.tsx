@@ -23,7 +23,7 @@ const testimonials = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-16 bg-secondary">
+    <section className="py-16">
       <div className="container mx-auto text-center px-4 md:px-0">
         <h2 className="text-3xl font-semibold mb-8 text-primary">
           Depoimentos
@@ -44,7 +44,9 @@ export const TestimonialsSection = () => {
                   <p className="text-primary font-semibold">{testimonial.name}</p>
                 </div>
               </div>
-              <p className=" text-muted-foreground italic">"{testimonial.text}"</p>
+              <p className="text-muted-foreground italic">
+                "{testimonial.text}"
+              </p>
             </div>
           ))}
         </div>
