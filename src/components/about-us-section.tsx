@@ -8,19 +8,18 @@ export const AboutUsSection = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-0">
         <div className="md:w-1/2 pr-8">
           <h2 className="text-3xl font-semibold mb-6 text-primary">
-            Sobre Nós
+            About Henrique Camargo
           </h2>
           <p className="text-lg text-gray-700 mb-8">
-            Somos um escritório de advocacia especializado em direito
-            trabalhista, com anos de experiência e dedicação aos nossos
-            clientes. Nossa missão é garantir que seus direitos sejam
-            respeitados e que você receba a melhor representação jurídica
-            possível.
+            Henrique Camargo is a dedicated labor law attorney with a proven
+            track record of successfully representing clients in a wide range of
+            labor-related issues. His expertise and commitment to justice make
+            him a strong advocate for workers' rights.
           </p>
           <p className="text-lg text-gray-700 mb-8">
-            Entendemos as complexidades do mundo do trabalho e estamos aqui
-            para oferecer soluções jurídicas eficazes e personalizadas para cada
-            cliente.
+            With a deep understanding of labor laws and regulations, Henrique
+            Camargo provides personalized legal solutions tailored to each
+            client's unique situation.
           </p>
         </div>
         <div className="md:w-1/2">
@@ -36,4 +35,3 @@ export const AboutUsSection = () => {
     </section>
   );
 };
-

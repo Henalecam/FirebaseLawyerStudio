@@ -10,15 +10,16 @@ export const HeroSection = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-0">
         <div className="md:w-1/2 pr-8">
           <h1 className="text-5xl font-bold mb-6 text-primary">
-            Especialista em Direito Trabalhista
+            Your Advocate in Labor Law
           </h1>
           <p className="text-lg text-gray-700 mb-8">
-            Defendendo os direitos dos trabalhadores com experiência e
-            dedicação. Conte com Henrique Camargo para soluções jurídicas
-            eficazes.
+            Navigating the complexities of labor law can be daunting. With
+            years of experience and a commitment to justice, Henrique Camargo
+            provides effective legal solutions tailored to your unique needs.
+            Trust in a dedicated professional to defend your rights.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/80">
-            Agende sua Consulta Gratuita
+          <Button className="bg-primary text-primary-foreground hover:bg-primary/80">
+            Schedule Your Free Consultation
           </Button>
         </div>
         <div className="md:w-1/2">
