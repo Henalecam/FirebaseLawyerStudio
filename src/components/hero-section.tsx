@@ -12,7 +12,7 @@ export const HeroSection = () => {
           <h1 className="text-5xl font-bold mb-6 text-primary">
             Your Advocate in Labor Law
           </h1>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className=" text-muted-foreground mb-8">
             Navigating the complexities of labor law can be daunting. With
             years of experience and a commitment to justice, Henrique Camargo
             provides effective legal solutions tailored to your unique needs.

@@ -5,19 +5,19 @@ const testimonials = [
     name: 'Maria Silva',
     text:
       'Excelente advogado, me ajudou muito com meu processo trabalhista. Recomendo!',
-    image: 'https://picsum.photos/50/50',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b82a10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
   },
   {
     name: 'João Pereira',
     text:
       'Profissional competente e dedicado, me orientou em todas as etapas do processo.',
-    image: 'https://picsum.photos/50/50',
+    image: 'https://images.unsplash.com/photo-1534528741702-a0c51b6972db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
   },
   {
     name: 'Ana Souza',
     text:
       'Superou minhas expectativas! Atendimento atencioso e eficiente. Muito satisfeita com o resultado.',
-    image: 'https://picsum.photos/50/50',
+    image: 'https://images.unsplash.com/photo-1573496800685-a280ab9afc5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
   },
 ];
 
@@ -32,7 +32,7 @@ export const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="p-6 bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex items-center mb-4">
                 <img
@@ -44,7 +44,7 @@ export const TestimonialsSection = () => {
                   <p className="text-primary font-semibold">{testimonial.name}</p>
                 </div>
               </div>
-              <p className="text-gray-700 italic">"{testimonial.text}"</p>
+              <p className=" text-muted-foreground italic">"{testimonial.text}"</p>
             </div>
           ))}
         </div>

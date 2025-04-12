@@ -10,13 +10,13 @@ export const AboutUsSection = () => {
           <h2 className="text-3xl font-semibold mb-6 text-primary">
             About Henrique Camargo
           </h2>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className="text-lg  mb-8">
             Henrique Camargo is a dedicated labor law attorney with a proven
             track record of successfully representing clients in a wide range of
             labor-related issues. His expertise and commitment to justice make
             him a strong advocate for workers' rights.
           </p>
-          <p className="text-lg text-gray-700 mb-8">
+          <p className="text-lg  mb-8">
             With a deep understanding of labor laws and regulations, Henrique
             Camargo provides personalized legal solutions tailored to each
             client's unique situation.
