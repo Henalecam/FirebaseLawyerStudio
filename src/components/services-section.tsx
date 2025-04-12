@@ -32,7 +32,7 @@ const services = [
 export const ServicesSection = () => {
   return (
     <section className="py-16">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4 md:px-0">
         <h2 className="text-3xl font-semibold mb-8 text-primary">Serviços</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (

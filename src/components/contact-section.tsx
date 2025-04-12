@@ -7,7 +7,7 @@ import {Textarea} from '@/components/ui/textarea';
 export const ContactSection = () => {
   return (
     <section className="py-16">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center px-4 md:px-0">
         <h2 className="text-3xl font-semibold mb-8 text-primary">
           Entre em Contato
         </h2>

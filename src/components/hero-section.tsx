@@ -7,8 +7,8 @@ import {Button} from '@/components/ui/button';
 export const HeroSection = () => {
   return (
     <section className="py-24 bg-secondary">
-      <div className="container mx-auto flex items-center justify-center">
-        <div className="w-1/2 pr-8">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 md:px-0">
+        <div className="md:w-1/2 pr-8">
           <h1 className="text-5xl font-bold mb-6 text-primary">
             Especialista em Direito Trabalhista
           </h1>
@@ -21,7 +21,7 @@ export const HeroSection = () => {
             Agende sua Consulta Gratuita
           </Button>
         </div>
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <Image
             src="https://picsum.photos/500/500"
             alt="Advogado Henrique Camargo"
