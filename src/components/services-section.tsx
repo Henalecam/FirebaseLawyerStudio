@@ -1,6 +1,6 @@
 'use client';
 
-import {ListBullet} from 'lucide-react';
+import {List} from 'lucide-react';
 
 const services = [
   'Litígios Trabalhistas',
@@ -20,7 +20,7 @@ export const ServicesSection = () => {
               key={index}
               className="text-lg text-gray-700 mb-2 flex items-center justify-center"
             >
-              <ListBullet className="mr-2 text-primary" />
+              <List className="mr-2 text-primary" />
               {service}
             </li>
           ))}
@@ -29,3 +29,4 @@ export const ServicesSection = () => {
     </section>
   );
 };
+
