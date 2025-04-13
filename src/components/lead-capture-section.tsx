@@ -3,15 +3,33 @@
 import {Button} from '@/components/ui/button';
 import {CheckCircle} from 'lucide-react';
 import {useState} from 'react';
+import {Input} from '@/components/ui/input';
 
 export const LeadCaptureSection = () => {
   const [calculated, setCalculated] = useState(false);
   const [diagnosed, setDiagnosed] = useState(false);
+  const [estimatedValue, setEstimatedValue] = useState<number | null>(null);
+
+  // State variables for user inputs
+  const [workedWithoutRegistration, setWorkedWithoutRegistration] = useState(false);
+  const [unpaidOvertime, setUnpaidOvertime] = useState(0);
+  const [sufferedHarassment, setSufferedHarassment] = useState(false);
 
   const handleCalculate = () => {
-    // Placeholder for calculation logic
+    // Placeholder for calculation logic based on user inputs
+    let baseValue = 0;
+
+    if (workedWithoutRegistration) {
+      baseValue += 18000;
+    }
+    baseValue += unpaidOvertime;
+    if (sufferedHarassment) {
+      baseValue += 7300;
+    }
+
+    setEstimatedValue(baseValue);
     setCalculated(true);
-    alert('Calculating your rights...');
+    alert(`Calculating your rights... Estimated value: R$ ${baseValue}`);
   };
 
   const handleDiagnose = () => {
@@ -35,6 +53,45 @@ export const LeadCaptureSection = () => {
           Calcule agora quanto pode ter direito a receber!
         </h2>
 
+        {/* Added Inputs */}
+        <div className="mb-4 flex flex-col items-center">
+          <label className="text-lg text-muted-foreground font-semibold mb-2">
+            Trabalhou sem registro?
+          </label>
+          <select
+            className="w-48 p-2 border rounded text-black"
+            onChange={e => setWorkedWithoutRegistration(e.target.value === 'true')}
+          >
+            <option value={false}>Não</option>
+            <option value={true}>Sim</option>
+          </select>
+        </div>
+
+        <div className="mb-4 flex flex-col items-center">
+          <label className="text-lg text-muted-foreground font-semibold mb-2">
+            Horas extras não pagas? (estimativa em R$)
+          </label>
+          <Input
+            type="number"
+            placeholder="Valor Estimado"
+            className="w-48 text-black"
+            onChange={e => setUnpaidOvertime(Number(e.target.value))}
+          />
+        </div>
+
+        <div className="mb-4 flex flex-col items-center">
+          <label className="text-lg text-muted-foreground font-semibold mb-2">
+            Sofreu assédio ou pressão no trabalho?
+          </label>
+          <select
+            className="w-48 p-2 border rounded text-black"
+            onChange={e => setSufferedHarassment(e.target.value === 'true')}
+          >
+            <option value={false}>Não</option>
+            <option value={true}>Sim</option>
+          </select>
+        </div>
+
         <div className="mb-8">
           <Button
             variant="secondary"
@@ -42,7 +99,7 @@ export const LeadCaptureSection = () => {
             disabled={calculated}
             className="font-semibold"
           >
-            {calculated ? 'Calculado!' : 'Calcular Meus Direitos'}
+            {calculated ? `Estimado: R$ ${estimatedValue}` : 'Calcular Meus Direitos'}
           </Button>
           <p className="text-sm text-muted-foreground mt-2">
             👉 Use nossa Calculadora Trabalhista Gratuita e descubra em menos de 1
