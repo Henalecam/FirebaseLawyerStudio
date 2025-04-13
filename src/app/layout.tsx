@@ -5,6 +5,7 @@ import Image from 'next/image';
 import './globals.css';
 import {Navbar} from '@/components/navbar';
 import {ThemeProvider} from '@/components/providers';
+import {WhatsAppLogo} from 'lucide-react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -46,7 +47,7 @@ export default function RootLayout({
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/whatsapp-logo.png"
+              src="/images/whatsapp.svg"
               alt="WhatsApp"
               width={30}
               height={30}
@@ -58,4 +59,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 

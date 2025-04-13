@@ -1,23 +1,25 @@
 'use client';
 
+import Image from 'next/image';
+
 const testimonials = [
   {
     name: 'Maria Silva',
     text:
       'Excelente advogado, me ajudou muito com meu processo trabalhista. Recomendo!',
-    image: '/images/avatar1.jpg',
+    image: '/images/maria.jpg',
   },
   {
     name: 'João Pereira',
     text:
       'Profissional competente e dedicado, me orientou em todas as etapas do processo.',
-    image: '/images/avatar2.jpg',
+    image: '/images/joao.jpg',
   },
   {
-    name: 'Ana Souza',
+    name: 'Rodrigo Souza',
     text:
-      'Superou minhas expectativas! Atendimento atencioso e eficiente. Muito satisfeita com o resultado.',
-    image: '/images/avatar3.jpg',
+      'Superou minhas expectativas! Atendimento atencioso e eficiente. Muito satisfeito com o resultado.',
+    image: '/images/rodrigo.jpg',
   },
 ];
 
@@ -35,9 +37,11 @@ export const TestimonialsSection = () => {
               className="p-6 bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex items-center mb-4">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={testimonial.name}
+                  width={50}
+                  height={50}
                   className="rounded-full w-12 h-12 mr-4"
                 />
                 <div>
@@ -54,4 +58,3 @@ export const TestimonialsSection = () => {
     </section>
   );
 };
-
