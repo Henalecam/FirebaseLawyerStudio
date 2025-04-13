@@ -1,22 +1,20 @@
 'use client';
 
 import {Button} from '@/components/ui/button';
-import {CheckCircle, WhatsAppLogo} from 'lucide-react';
-import {useState} from 'react';
+import {CheckCircle} from 'lucide-react';
+import {useState, useEffect} from 'react';
 import {Input} from '@/components/ui/input';
+import {toast} from '@/hooks/use-toast';
 
 export const LeadCaptureSection = () => {
-  const [calculated, setCalculated] = useState(false);
-  const [diagnosed, setDiagnosed] = useState(false);
-  const [estimatedValue, setEstimatedValue] = useState<number | null>(null);
+  const [estimatedValue, setEstimatedValue] = useState<number>(0);
 
   // State variables for user inputs
   const [workedWithoutRegistration, setWorkedWithoutRegistration] = useState(false);
-  const [unpaidOvertime, setUnpaidOvertime] = useState(0);
+  const [unpaidOvertime, setUnpaidOvertime] = useState<number>(0);
   const [sufferedHarassment, setSufferedHarassment] = useState(false);
 
-  const handleCalculate = () => {
-    // Placeholder for calculation logic based on user inputs
+  useEffect(() => {
     let baseValue = 0;
 
     if (workedWithoutRegistration) {
@@ -28,14 +26,13 @@ export const LeadCaptureSection = () => {
     }
 
     setEstimatedValue(baseValue);
-    setCalculated(true);
-    alert(`Calculating your rights... Estimated value: R$ ${baseValue}`);
-  };
+  }, [workedWithoutRegistration, unpaidOvertime, sufferedHarassment]);
 
   const handleDiagnose = () => {
-    // Placeholder for diagnosis logic
-    setDiagnosed(true);
-    alert('Running diagnostic...');
+    toast({
+      title: 'Diagnóstico em Andamento',
+      description: 'Estamos analisando seu caso...',
+    });
   };
 
   const handleWhatsApp = () => {
@@ -93,14 +90,9 @@ export const LeadCaptureSection = () => {
         </div>
 
         <div className="mb-8">
-          <Button
-            variant="secondary"
-            onClick={handleCalculate}
-            disabled={calculated}
-            className="font-semibold"
-          >
-            {calculated ? `Estimado: R$ ${estimatedValue}` : 'Calcular Meus Direitos'}
-          </Button>
+          <div className="font-semibold text-primary">
+            Estimativa: R$ {estimatedValue}
+          </div>
           <p className="text-sm text-muted-foreground mt-2">
             👉 Use nossa Calculadora Trabalhista Gratuita e descubra em menos de 1
             minuto se a empresa te deve algo.
@@ -119,10 +111,9 @@ export const LeadCaptureSection = () => {
           <Button
             variant="secondary"
             onClick={handleDiagnose}
-            disabled={diagnosed}
             className="mt-4 font-semibold"
           >
-            {diagnosed ? 'Diagnosticado!' : 'Fazer Diagnóstico Agora'}
+            Fazer Diagnóstico Agora
           </Button>
           <p className="text-sm text-muted-foreground mt-2">
             Responda 5 perguntas e veja um raio-x do seu caso. Não leva nem 2
