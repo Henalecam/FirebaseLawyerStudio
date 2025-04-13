@@ -51,6 +51,7 @@ export default function RootLayout({
               alt="WhatsApp"
               width={30}
               height={30}
+              style={{ width: 'auto', height: 'auto' }}
               className="whatsapp-icon"
             />
           </a>
@@ -59,5 +60,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
