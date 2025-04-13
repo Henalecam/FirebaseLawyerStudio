@@ -3,23 +3,25 @@
 import { CheckCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export const LeadCaptureSection = () => {
   const [estimatedValue, setEstimatedValue] = useState<number>(0);
 
   // State variables for user inputs
-  const [workedWithoutRegistration, setWorkedWithoutRegistration] = useState(false);
+  const [workedWithoutRegistration, setWorkedWithoutRegistration] = useState<boolean | null>(null);
   const [unpaidOvertime, setUnpaidOvertime] = useState<number>(0);
-  const [sufferedHarassment, setSufferedHarassment] = useState(false);
+  const [sufferedHarassment, setSufferedHarassment] = useState<boolean | null>(null);
 
   useEffect(() => {
     let baseValue = 0;
 
-    if (workedWithoutRegistration) {
+    if (workedWithoutRegistration === true) {
       baseValue += 18000;
     }
     baseValue += unpaidOvertime;
-    if (sufferedHarassment) {
+    if (sufferedHarassment === true) {
       baseValue += 7300;
     }
 
@@ -41,13 +43,15 @@ export const LeadCaptureSection = () => {
           <label className="text-lg text-muted-foreground font-semibold mb-2">
             Trabalhou sem registro?
           </label>
-          <select
-            className="w-48 p-2 border rounded text-black"
-            onChange={e => setWorkedWithoutRegistration(e.target.value === 'true')}
-          >
-            <option value={false}>Não</option>
-            <option value={true}>Sim</option>
-          </select>
+          <Select onValueChange={(value) => setWorkedWithoutRegistration(value === 'true')}>
+            <SelectTrigger className="w-48">
+              <SelectValue placeholder="Selecione" defaultValue={null === workedWithoutRegistration ? undefined : workedWithoutRegistration.toString()} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="false">Não</SelectItem>
+              <SelectItem value="true">Sim</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="mb-4 flex flex-col items-center">
@@ -66,13 +70,15 @@ export const LeadCaptureSection = () => {
           <label className="text-lg text-muted-foreground font-semibold mb-2">
             Sofreu assédio ou pressão no trabalho?
           </label>
-          <select
-            className="w-48 p-2 border rounded text-black"
-            onChange={e => setSufferedHarassment(e.target.value === 'true')}
-          >
-            <option value={false}>Não</option>
-            <option value={true}>Sim</option>
-          </select>
+          <Select onValueChange={(value) => setSufferedHarassment(value === 'true')}>
+            <SelectTrigger className="w-48">
+              <SelectValue placeholder="Selecione" defaultValue={null === sufferedHarassment ? undefined : sufferedHarassment.toString()} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="false">Não</SelectItem>
+              <SelectItem value="true">Sim</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         <div className="mb-8">
