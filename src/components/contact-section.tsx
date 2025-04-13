@@ -6,29 +6,29 @@ import {Textarea} from '@/components/ui/textarea';
 
 export const ContactSection = () => {
   return (
-    <section className="py-16">
+    <section className="py-16" id="contact-section">
       <div className="container mx-auto text-center px-4 md:px-0">
         <h2 className="text-3xl font-semibold mb-8 text-primary">
-          Get in Touch
+          Entre em Contato
         </h2>
         <p className="text-muted-foreground mb-8">
-          Ready to discuss your labor law concerns? Contact us today to schedule
-          a consultation and learn how Henrique Camargo can help you protect
-          your rights.
+          Precisa de ajuda com questões trabalhistas? Entre em contato conosco
+          para agendar uma consulta e descobrir como Henrique Camargo pode
+          proteger seus direitos.
         </p>
         <div className="max-w-lg mx-auto">
           <form className="grid grid-cols-1 gap-6">
             <div>
-              <Input type="text" placeholder="Your Name" className="w-full" />
+              <Input type="text" placeholder="Seu Nome" className="w-full" />
             </div>
             <div>
-              <Input type="email" placeholder="Your Email" className="w-full" />
+              <Input type="email" placeholder="Seu Email" className="w-full" />
             </div>
             <div>
-              <Textarea placeholder="Your Message" className="w-full" />
+              <Textarea placeholder="Sua Mensagem" className="w-full" />
             </div>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/80">
-              Send Message
+              Enviar Mensagem
             </Button>
           </form>
         </div>

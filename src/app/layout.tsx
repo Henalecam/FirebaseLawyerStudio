@@ -25,13 +25,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <main className="container mx-auto">{children}</main>
+          {/* WhatsApp Floating Button */}
+          <a
+            href="https://wa.me/YOUR_WHATSAPP_NUMBER"
+            className="whatsapp-float"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fa fa-whatsapp whatsapp-icon"></i>
+          </a>
         </ThemeProvider>
       </body>
     </html>

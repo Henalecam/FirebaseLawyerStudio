@@ -14,14 +14,14 @@ export const HeroSection = () => {
         {/* Content */}
         <div className="relative z-10">
           <h1 className="text-6xl font-extrabold mb-8 text-primary drop-shadow-md">
-            Defending Your Rights in the Workplace
+            Defendendo Seus Direitos no Trabalho
           </h1>
           <p className="text-xl text-muted-foreground mb-12">
-            Experienced legal representation for labor law issues. Get a free
-            consultation today.
+            Representação jurídica experiente para questões trabalhistas. Agende
+            uma consulta gratuita hoje mesmo.
           </p>
           <Button className="bg-primary text-primary-foreground hover:bg-primary/80">
-            Schedule Your Free Consultation
+            Agende sua Consulta Gratuita
           </Button>
         </div>
 

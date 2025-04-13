@@ -99,8 +99,8 @@ body {
     --card-foreground: 210 40% 98%;
     --border: 217.2 32.6% 27.5%;
     --input: 217.2 32.6% 17.5%;
-    --primary: 48 100% 50%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 207 70% 50%;
+    --primary-foreground: 210 40% 98%;
     --secondary: 212.5 26.8% 14.1%;
     --secondary-foreground: 210 40% 98%;
     --accent: 48 100% 50%;
@@ -117,6 +117,8 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --whatsapp: 151 74% 41%;
+    --whatsapp-foreground: 0 0% 100%;
   }
 
   .light {
@@ -130,7 +132,7 @@ body {
     --card-foreground: 222.2 84% 4.9%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --primary: 48 100% 50%;
+    --primary: 207 70% 50%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -147,6 +149,8 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --whatsapp: 151 74% 41%;
+    --whatsapp-foreground: 0 0% 100%;
   }
 }
 
@@ -164,3 +168,26 @@ body {
   }
 }
 
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: hsl(var(--whatsapp));
+  color: hsl(var(--whatsapp-foreground));
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+
+.whatsapp-float:hover {
+  background-color: #25d366;
+}
+
+.whatsapp-icon {
+  margin-top: 16px;
+}
