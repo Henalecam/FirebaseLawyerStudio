@@ -1,10 +1,8 @@
 'use client';
 
-import {Button} from '@/components/ui/button';
-import {CheckCircle} from 'lucide-react';
-import {useState, useEffect} from 'react';
-import {Input} from '@/components/ui/input';
-import {toast} from '@/hooks/use-toast';
+import { CheckCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Input } from '@/components/ui/input';
 
 export const LeadCaptureSection = () => {
   const [estimatedValue, setEstimatedValue] = useState<number>(0);
@@ -28,27 +26,14 @@ export const LeadCaptureSection = () => {
     setEstimatedValue(baseValue);
   }, [workedWithoutRegistration, unpaidOvertime, sufferedHarassment]);
 
-  const handleDiagnose = () => {
-    // Scroll to ContactSection
-    const contactSection = document.getElementById('contact-section');
-    if (contactSection) {
-      contactSection.scrollIntoView({behavior: 'smooth'});
-    } else {
-      toast({
-        title: 'Erro',
-        description: 'Não foi possível encontrar a seção de contato.',
-      });
-    }
-  };
-
   return (
     <section className="py-12 bg-muted">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl font-extrabold text-primary mb-4">
-          Teve seus direitos trabalhistas desrespeitados?
+          Descubra Seus Direitos Trabalhistas!
         </h1>
         <h2 className="text-2xl text-muted-foreground mb-8">
-          Descubra agora o valor estimado que você pode ter direito a receber!
+          Calcule agora uma estimativa do que você pode ter direito a receber.
         </h2>
 
         {/* Added Inputs */}
@@ -72,7 +57,7 @@ export const LeadCaptureSection = () => {
           <Input
             type="number"
             placeholder="Valor Estimado"
-            className="w-48 text-black"
+            className="w-48 text-black border-2 border-gray-300 bg-white"
             onChange={e => setUnpaidOvertime(Number(e.target.value))}
           />
         </div>
@@ -95,14 +80,13 @@ export const LeadCaptureSection = () => {
             Estimativa: R$ {estimatedValue}
           </div>
           <p className="text-sm text-muted-foreground mt-2">
-            👉 Use nossa Calculadora Trabalhista Gratuita e descubra em menos de 1
-            minuto se a empresa te deve algo.
+            👉 Descubra em menos de 1 minuto se a empresa te deve algo.
           </p>
         </div>
 
         <div className="mb-8">
           <p className="text-lg text-muted-foreground font-semibold">
-            🎯 Saiba mais sobre seus direitos:
+            Entenda seus direitos:
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
@@ -136,16 +120,19 @@ export const LeadCaptureSection = () => {
               </p>
             </div>
           </div>
+        </div>
 
-          <Button
-            variant="secondary"
-            onClick={handleDiagnose}
-            className="mt-4 font-semibold"
+        <div className="mb-8">
+          <a
+            href="https://wa.me/YOUR_WHATSAPP_NUMBER"
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Fale com um especialista
-          </Button>
+            Fale com um advogado no WhatsApp
+          </a>
           <p className="text-sm text-muted-foreground mt-2">
-            Tenha uma consulta e veja um raio-x do seu caso.
+            Atendimento direto, sigiloso e gratuito.
           </p>
         </div>
 
@@ -160,4 +147,3 @@ export const LeadCaptureSection = () => {
     </section>
   );
 };
-
