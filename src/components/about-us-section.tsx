@@ -24,7 +24,7 @@ export const AboutUsSection = () => {
         </div>
         <div className="md:w-1/2">
           <Image
-            src="https://images.unsplash.com/photo-1505664194779-8be206e3a81c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxlZ2FsJTIwb2ZmaWNlfGVufDB8fDB8fHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            src="/images/legal-office.jpg"
             alt="Equipe do Escritório"
             width={500}
             height={300}
@@ -35,3 +35,4 @@ export const AboutUsSection = () => {
     </section>
   );
 };
+

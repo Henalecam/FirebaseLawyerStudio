@@ -5,19 +5,19 @@ const testimonials = [
     name: 'Maria Silva',
     text:
       'Excelente advogado, me ajudou muito com meu processo trabalhista. Recomendo!',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b82a10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
+    image: '/images/avatar1.jpg',
   },
   {
     name: 'João Pereira',
     text:
       'Profissional competente e dedicado, me orientou em todas as etapas do processo.',
-    image: 'https://images.unsplash.com/photo-1534528741702-a0c51b6972db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
+    image: '/images/avatar2.jpg',
   },
   {
     name: 'Ana Souza',
     text:
       'Superou minhas expectativas! Atendimento atencioso e eficiente. Muito satisfeita com o resultado.',
-    image: 'https://images.unsplash.com/photo-1573496800685-a280ab9afc5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
+    image: '/images/avatar3.jpg',
   },
 ];
 
@@ -54,3 +54,4 @@ export const TestimonialsSection = () => {
     </section>
   );
 };
+

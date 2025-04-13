@@ -24,7 +24,13 @@ export const HeroSection = () => {
             Agende sua Consulta Gratuita
           </Button>
         </div>
-
+         <Image
+          src="/images/default-hero-image.jpg" // Replace with your actual image path
+          alt="Lawyer"
+          width={500}
+          height={300}
+          className="rounded-lg shadow-xl"
+        />
         {/* Image */}
         {/* Note: You might consider placing the image on the background with CSS for a more dynamic effect */}
       </div>

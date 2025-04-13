@@ -1,10 +1,12 @@
 'use client';
 
-import { CheckCircle } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import {CheckCircle, WhatsAppLogo} from 'lucide-react';
+import Image from 'next/image';
+import {useState, useEffect} from 'react';
+
+import {Button} from '@/components/ui/button';
+import {Input} from '@/components/ui/input';
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from '@/components/ui/select';
 
 export const LeadCaptureSection = () => {
   const [estimatedValue, setEstimatedValue] = useState<number>(0);
@@ -43,9 +45,18 @@ export const LeadCaptureSection = () => {
           <label className="text-lg text-muted-foreground font-semibold mb-2">
             Trabalhou sem registro?
           </label>
-          <Select onValueChange={(value) => setWorkedWithoutRegistration(value === 'true')}>
+          <Select
+            onValueChange={value => setWorkedWithoutRegistration(value === 'true')}
+          >
             <SelectTrigger className="w-48">
-              <SelectValue placeholder="Selecione" defaultValue={null === workedWithoutRegistration ? undefined : workedWithoutRegistration.toString()} />
+              <SelectValue
+                placeholder="Selecione"
+                defaultValue={
+                  null === workedWithoutRegistration
+                    ? undefined
+                    : workedWithoutRegistration.toString()
+                }
+              />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="false">Não</SelectItem>
@@ -61,8 +72,12 @@ export const LeadCaptureSection = () => {
           <Input
             type="number"
             placeholder="Valor Estimado"
-            className="w-48 text-black border-2 border-gray-300 bg-white"
-            onChange={e => setUnpaidOvertime(Number(e.target.value))}
+            className="w-48 text-black border-2 border-gray-300 bg-white [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            onChange={e => {
+              const value = Math.max(0, Number(e.target.value));
+              setUnpaidOvertime(value);
+            }}
+            min="0"
           />
         </div>
 
@@ -70,9 +85,18 @@ export const LeadCaptureSection = () => {
           <label className="text-lg text-muted-foreground font-semibold mb-2">
             Sofreu assédio ou pressão no trabalho?
           </label>
-          <Select onValueChange={(value) => setSufferedHarassment(value === 'true')}>
+          <Select
+            onValueChange={value => setSufferedHarassment(value === 'true')}
+          >
             <SelectTrigger className="w-48">
-              <SelectValue placeholder="Selecione" defaultValue={null === sufferedHarassment ? undefined : sufferedHarassment.toString()} />
+              <SelectValue
+                placeholder="Selecione"
+                defaultValue={
+                  null === sufferedHarassment
+                    ? undefined
+                    : sufferedHarassment.toString()
+                }
+              />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="false">Não</SelectItem>
@@ -102,7 +126,10 @@ export const LeadCaptureSection = () => {
                 Trabalho sem registro
               </h3>
               <p className="text-muted-foreground">
-                O trabalho sem registro (ou "trabalho informal") ocorre quando o empregador não formaliza o vínculo empregatício através do registro na Carteira de Trabalho e Previdência Social (CTPS). Essa prática é ilegal e priva o trabalhador de diversos direitos.
+                O trabalho sem registro (ou "trabalho informal") ocorre quando o
+                empregador não formaliza o vínculo empregatício através do
+                registro na Carteira de Trabalho e Previdência Social (CTPS).
+                Essa prática é ilegal e priva o trabalhador de diversos direitos.
               </p>
             </div>
 
@@ -112,7 +139,10 @@ export const LeadCaptureSection = () => {
                 Horas extras não pagas
               </h3>
               <p className="text-muted-foreground">
-                A legislação trabalhista estabelece que a jornada de trabalho padrão é de 8 horas diárias e 44 horas semanais. As horas trabalhadas além desse limite devem ser pagas como horas extras, com um adicional de, no mínimo, 50% sobre o valor da hora normal.
+                A legislação trabalhista estabelece que a jornada de trabalho
+                padrão é de 8 horas diárias e 44 horas semanais. As horas
+                trabalhadas além desse limite devem ser pagas como horas extras,
+                com um adicional de, no mínimo, 50% sobre o valor da hora normal.
               </p>
             </div>
 
@@ -122,25 +152,36 @@ export const LeadCaptureSection = () => {
                 Assédio ou pressão no trabalho
               </h3>
               <p className="text-muted-foreground">
-                O assédio moral no trabalho é caracterizado por condutas abusivas, repetitivas e prolongadas, que expõem o trabalhador a situações humilhantes e constrangedoras.
+                O assédio moral no trabalho é caracterizado por condutas
+                abusivas, repetitivas e prolongadas, que expõem o trabalhador a
+                situações humilhantes e constrangedoras.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mb-8">
-          <a
-            href="https://wa.me/YOUR_WHATSAPP_NUMBER"
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Fale com um advogado no WhatsApp
-          </a>
-          <p className="text-sm text-muted-foreground mt-2">
-            Atendimento direto, sigiloso e gratuito.
-          </p>
-        </div>
+        <Button
+          onClick={() => {
+            window.open(
+              'https://wa.me/5541999155948?text=' +
+                encodeURIComponent('Quero saber mais sobre os seus serviços'),
+              '_blank'
+            );
+          }}
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          <Image
+            src="/images/whatsapp-logo.png"
+            alt="WhatsApp"
+            width={20}
+            height={20}
+            className="mr-2"
+          />
+          Fale com um advogado no WhatsApp
+        </Button>
+        <p className="text-sm text-muted-foreground mt-2">
+          Atendimento direto, sigiloso e gratuito.
+        </p>
 
         <div>
           <p className="text-xs text-muted-foreground italic">
