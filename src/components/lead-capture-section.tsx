@@ -2,11 +2,32 @@
 
 import {Button} from '@/components/ui/button';
 import {CheckCircle} from 'lucide-react';
+import {useState} from 'react';
 
 export const LeadCaptureSection = () => {
+  const [calculated, setCalculated] = useState(false);
+  const [diagnosed, setDiagnosed] = useState(false);
+
+  const handleCalculate = () => {
+    // Placeholder for calculation logic
+    setCalculated(true);
+    alert('Calculating your rights...');
+  };
+
+  const handleDiagnose = () => {
+    // Placeholder for diagnosis logic
+    setDiagnosed(true);
+    alert('Running diagnostic...');
+  };
+
+  const handleWhatsApp = () => {
+    // Replace with your WhatsApp link
+    window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank');
+  };
+
   return (
-    <section className="bg-background py-12">
-      <div className="container mx-auto text-center px-4 md:px-0">
+    <section className="py-12 bg-muted">
+      <div className="container mx-auto text-center">
         <h1 className="text-4xl font-extrabold text-primary mb-4">
           Você foi demitido ou teve seus direitos violados no trabalho?
         </h1>
@@ -15,8 +36,13 @@ export const LeadCaptureSection = () => {
         </h2>
 
         <div className="mb-8">
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/80 font-semibold">
-            Calcular Meus Direitos
+          <Button
+            variant="secondary"
+            onClick={handleCalculate}
+            disabled={calculated}
+            className="font-semibold"
+          >
+            {calculated ? 'Calculado!' : 'Calcular Meus Direitos'}
           </Button>
           <p className="text-sm text-muted-foreground mt-2">
             👉 Use nossa Calculadora Trabalhista Gratuita e descubra em menos de 1
@@ -33,8 +59,13 @@ export const LeadCaptureSection = () => {
             <li className="mb-1">Não recebeu horas extras?</li>
             <li>Sofreu assédio ou pressão no trabalho?</li>
           </ul>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/80 mt-4 font-semibold">
-            Fazer Diagnóstico Agora
+          <Button
+            variant="secondary"
+            onClick={handleDiagnose}
+            disabled={diagnosed}
+            className="mt-4 font-semibold"
+          >
+            {diagnosed ? 'Diagnosticado!' : 'Fazer Diagnóstico Agora'}
           </Button>
           <p className="text-sm text-muted-foreground mt-2">
             Responda 5 perguntas e veja um raio-x do seu caso. Não leva nem 2
@@ -46,7 +77,10 @@ export const LeadCaptureSection = () => {
           <p className="text-lg text-muted-foreground">
             💬 Fale agora com um especialista.
           </p>
-          <Button className="bg-green-500 text-primary-foreground hover:bg-green-600 font-semibold">
+          <Button
+            className="bg-green-500 hover:bg-green-600 text-primary-foreground font-semibold"
+            onClick={handleWhatsApp}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
