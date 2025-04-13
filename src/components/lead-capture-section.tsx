@@ -1,7 +1,7 @@
 'use client';
 
 import {Button} from '@/components/ui/button';
-import {CheckCircle} from 'lucide-react';
+import {CheckCircle, WhatsAppLogo} from 'lucide-react';
 import {useState} from 'react';
 import {Input} from '@/components/ui/input';
 
