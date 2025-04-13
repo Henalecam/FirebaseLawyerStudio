@@ -29,10 +29,16 @@ export const LeadCaptureSection = () => {
   }, [workedWithoutRegistration, unpaidOvertime, sufferedHarassment]);
 
   const handleDiagnose = () => {
-    toast({
-      title: 'Diagnóstico em Andamento',
-      description: 'Estamos analisando seu caso...',
-    });
+    // Scroll to ContactSection
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({behavior: 'smooth'});
+    } else {
+      toast({
+        title: 'Erro',
+        description: 'Não foi possível encontrar a seção de contato.',
+      });
+    }
   };
 
   const handleWhatsApp = () => {
@@ -101,29 +107,56 @@ export const LeadCaptureSection = () => {
 
         <div className="mb-8">
           <p className="text-lg text-muted-foreground font-semibold">
-            🎯 Faça um diagnóstico rápido e confidencial:
+            🎯 Saiba mais sobre seus direitos:
           </p>
-          <ul className="list-none text-left pl-6 text-muted-foreground">
-            <li className="mb-1">Trabalhou sem registro?</li>
-            <li className="mb-1">Não recebeu horas extras?</li>
-            <li>Sofreu assédio ou pressão no trabalho?</li>
-          </ul>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            {/* Card 1: Trabalho sem registro */}
+            <div className="p-4 bg-card rounded-lg shadow-md text-left">
+              <h3 className="text-xl font-semibold text-primary mb-2">
+                Trabalho sem registro
+              </h3>
+              <p className="text-muted-foreground">
+                O trabalho sem registro (ou "trabalho informal") ocorre quando o empregador não formaliza o vínculo empregatício através do registro na Carteira de Trabalho e Previdência Social (CTPS). Essa prática é ilegal e priva o trabalhador de diversos direitos.
+              </p>
+            </div>
+
+            {/* Card 2: Horas extras não pagas */}
+            <div className="p-4 bg-card rounded-lg shadow-md text-left">
+              <h3 className="text-xl font-semibold text-primary mb-2">
+                Horas extras não pagas
+              </h3>
+              <p className="text-muted-foreground">
+                A legislação trabalhista estabelece que a jornada de trabalho padrão é de 8 horas diárias e 44 horas semanais. As horas trabalhadas além desse limite devem ser pagas como horas extras, com um adicional de, no mínimo, 50% sobre o valor da hora normal.
+              </p>
+            </div>
+
+            {/* Card 3: Assédio ou pressão no trabalho */}
+            <div className="p-4 bg-card rounded-lg shadow-md text-left">
+              <h3 className="text-xl font-semibold text-primary mb-2">
+                Assédio ou pressão no trabalho
+              </h3>
+              <p className="text-muted-foreground">
+                O assédio moral no trabalho é caracterizado por condutas abusivas, repetitivas e prolongadas, que expõem o trabalhador a situações humilhantes e constrangedoras.
+              </p>
+            </div>
+          </div>
+
           <Button
             variant="secondary"
             onClick={handleDiagnose}
             className="mt-4 font-semibold"
           >
-            Fazer Diagnóstico Agora
+            Fale com um especialista
           </Button>
           <p className="text-sm text-muted-foreground mt-2">
-            Responda 5 perguntas e veja um raio-x do seu caso. Não leva nem 2
-            minutos.
+            Tenha uma consulta e veja um raio-x do seu caso.
           </p>
         </div>
 
         <div className="mb-8">
           <p className="text-lg text-muted-foreground">
-            💬 Fale agora com um especialista.
+            💬 Ou, fale agora com um especialista.
           </p>
           <Button
             className="bg-green-500 hover:bg-green-600 text-primary-foreground font-semibold"
