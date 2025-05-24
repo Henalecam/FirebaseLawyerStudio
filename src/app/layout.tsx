@@ -33,10 +33,27 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: 'Camargo Legal | Advocacia Trabalhista',
-    description: 'Advocacia trabalhista especializada com foco em resultados.',
-    locale: 'pt_BR',
+    title: 'Camargo Legal - Escritório de Advocacia Trabalhista',
+    description: 'Especialistas em direito trabalhista. Protegendo seus direitos, garantindo seu futuro. Agende uma análise gratuita do seu caso!',
+    url: 'https://firebase-lawyer-studio.vercel.app/',
     type: 'website',
+    locale: 'pt_BR',
+    images: [
+      {
+        url: 'https://firebase-lawyer-studio.vercel.app/images/camargolegal.png',
+        width: 1200,
+        height: 630,
+        alt: 'Camargo Legal Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Camargo Legal - Escritório de Advocacia Trabalhista',
+    description: 'Especialistas em direito trabalhista. Protegendo seus direitos, garantindo seu futuro. Agende uma análise gratuita do seu caso!',
+    images: ['https://firebase-lawyer-studio.vercel.app/images/camargolegal.png'],
+    site: '@camargolegal',
+    creator: '@camargolegal',
   },
 };
 
